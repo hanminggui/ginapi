@@ -4,9 +4,9 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	. "ginapi/common"
-	. "ginapi/log"
-	. "ginapi/response"
+	. "github.com/hanminggui/ginapi/common"
+	. "github.com/hanminggui/ginapi/log"
+	. "github.com/hanminggui/ginapi/response"
 	"io/ioutil"
 	"time"
 

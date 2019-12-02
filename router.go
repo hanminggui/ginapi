@@ -2,8 +2,8 @@ package ginapi
 
 import (
 	"fmt"
-	. "ginapi/log"
-		. "ginapi/response"
+	. "github.com/hanminggui/ginapi/log"
+	. "github.com/hanminggui/ginapi/response"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
 	"net/http"

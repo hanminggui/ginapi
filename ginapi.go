@@ -2,8 +2,8 @@ package ginapi
 
 import (
 	"errors"
-	. "ginapi/common"
-	. "ginapi/log"
+	. "github.com/hanminggui/ginapi/common"
+	. "github.com/hanminggui/ginapi/log"
 )
 
 // Start 入口
