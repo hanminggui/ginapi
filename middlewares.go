@@ -3,10 +3,7 @@ package ginapi
 import (
 	"bytes"
 	"encoding/json"
-	"fmt"
 	. "github.com/hanminggui/ginapi/common"
-	. "github.com/hanminggui/ginapi/log"
-	. "github.com/hanminggui/ginapi/response"
 	"io/ioutil"
 	"time"
 
@@ -70,17 +67,12 @@ func logger(c *gin.Context) {
 
 func token2MemID(c *gin.Context) {
 	token := c.GetHeader("token")
-	var memID uint = 4294967295
-	memID = 4294967296
+	var memID uint
 	exists := Redis.Get(token, &memID)
 	if exists {
 		c.Set("memId", memID)
 	}
-	c.Set("memId", 999999)
 	c.Next()
-	memID2 := Uint(c.Get("memId"))
-	memID3 := c.GetInt("memId")
-	fmt.Println(memID2, memID3)
 }
 
 // recovery 捕获pance

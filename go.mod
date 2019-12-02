@@ -16,6 +16,4 @@ require (
 
 replace (
         github.com/hanminggui/ginapi/common 		=> ~/code/ginapi/common
-        github.com/hanminggui/ginapi/log       	=> ~/code/ginapi/log
-        github.com/hanminggui/ginapi/response  	=> ~/code/ginapi/response
 )

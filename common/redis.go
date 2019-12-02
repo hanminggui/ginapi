@@ -3,7 +3,6 @@ package common
 import (
 	"encoding/json"
 	"errors"
-	. "github.com/hanminggui/ginapi/log"
 	"github.com/gomodule/redigo/redis"
 	"github.com/spf13/viper"
 	"time"

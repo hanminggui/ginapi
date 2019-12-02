@@ -4,7 +4,6 @@ import (
 	"errors"
 	"fmt"
 	. "github.com/hanminggui/ginapi/common"
-	. "github.com/hanminggui/ginapi/log"
 )
 
 // Start 入口

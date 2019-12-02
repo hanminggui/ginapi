@@ -1,7 +1,6 @@
 package common
 
 import (
-	. "github.com/hanminggui/ginapi/log"
 	"github.com/gin-gonic/gin"
 	"github.com/sirupsen/logrus"
 )

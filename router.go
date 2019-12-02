@@ -2,8 +2,7 @@ package ginapi
 
 import (
 	"fmt"
-	. "github.com/hanminggui/ginapi/log"
-	. "github.com/hanminggui/ginapi/response"
+	. "github.com/hanminggui/ginapi/common"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
 	"net/http"
@@ -37,7 +36,6 @@ func initRouter(engine *gin.Engine) {
 			oldHead := string(methodName)
 			newHead := strings.ToLower(oldHead)
 			methodName = strings.Replace(methodName, oldHead, newHead, 1)
-			// Log.Info(strings.SplitN(eType.PkgPath(), viper.GetString("product"), 2))
 			apiPath := "/" + strings.SplitN(eType.PkgPath(), viper.GetString("product"), 2)[0] + "/" + methodName
 			fn := eValue.Method(i)
 			method := eType.Name()
@@ -57,7 +55,6 @@ func initRouter(engine *gin.Engine) {
  */
 func call(c *gin.Context, fn *reflect.Value) {
 	paramList := []reflect.Value{reflect.ValueOf(c)}
-	Log.Info(3, fn)
 	retList := fn.Call(paramList)
 	switch resType := retList[0].Interface().(type) {
 	case error:
@@ -73,9 +70,6 @@ func call(c *gin.Context, fn *reflect.Value) {
 func lodaApis(engine *gin.Engine) {
 	for path := range funcs["GET"] {
 		engine.GET(path, func(c *gin.Context) {
-			Log.Info(0, funcs["GET"])
-			Log.Info(1, fmt.Sprint(c.Request.URL.Path))
-			Log.Info(2, funcs["GET"][fmt.Sprint(c.Request.URL.Path)])
 			call(c, funcs["GET"][fmt.Sprint(c.Request.URL.Path)])
 		})
 	}

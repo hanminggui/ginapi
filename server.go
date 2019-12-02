@@ -2,7 +2,7 @@ package ginapi
 
 import (
 	"context"
-	. "github.com/hanminggui/ginapi/log"
+	. "github.com/hanminggui/ginapi/common"
 	"github.com/spf13/viper"
 	"net/http"
 	"os"
