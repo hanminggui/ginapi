@@ -7,7 +7,7 @@ import (
 )
 
 func initConfig(configPath string) {
-	fmt.Println("config loaded")
+	fmt.Println("config loaded", configPath)
 	if os.Getenv("mode") == "" {
 		viper.Set("mode", "debug")
 	}
